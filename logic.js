@@ -33,6 +33,17 @@ let winConditions = [
 
 ]
 
+const isBoardFilled = () => {
+    for (let i = 0; i<cells.length; i++){
+        if(cells[i].innerText == ''){
+            return false
+        }
+    }
+    return true
+
+    
+    
+}
 const checkBoard = () =>{
     console.log('checking')
     for (condition of winConditions){
@@ -40,9 +51,9 @@ const checkBoard = () =>{
         let b = condition[1]
         let c  =condition[2]
         if (cells[a].innerText== '' ||cells[b].innerText ==''||cells[c].innerText==''){
-            console.log('Game still going')
             continue
         }
+
        if(cells[a].innerText ==cells[b].innerText &&cells[b].innerText ==cells[c].innerText&&cells[a].innerText == cells[a].innerText){
            console.log('winnder')
            if (cells[a].innerText === player1Marker){
@@ -50,23 +61,27 @@ const checkBoard = () =>{
            }
            return console.log('Player 2 is the winner')
        }
+       
     }    
 }   
 
 
 for (let i = 0; i<cells.length; i++){
     cells[i].addEventListener('click', () => {
-
         if (turn){
             cells[i].innerText = player1Marker
             turn = false
+            if(isBoardFilled()){
+                return console.log('draw')
+            }
         } else if(!turn){
             cells[i].innerText = player2Marker
             turn = true
+            if(isBoardFilled()){
+                return console.log('draw')
+            }
         }
         checkBoard()
         
     })
-   
-    
 }
