@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent
+  }
+  #board{
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    flex: 1;
+    display: flex;
+}
+
+#row2{
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+}
+
+#cell2, #cell5, #cell8{
+    border-left: solid black 2px;
+    border-right: solid black 2px;
+}
+.cells{
+    flex: 1
+}
+

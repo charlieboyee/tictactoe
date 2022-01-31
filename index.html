@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/index.css'>
+    </link>
+    <title>tic tac toe</title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Who goes first? Please make a selection.</p>
+
+            <input type='radio' id='o' name='firstTurn' value='O' />
+            <label htmlfor='o'>O</label>
+            <input type='radio' id='x' name='firstTurn' value='X' />
+            <label htmlfor='x'>X</label>
+            <button id='startGameButton'>Start Game</button>
+
+        </div>
+
+    </div>
+    <main id= 'board'>
+        <div class='row' id='row1'>
+            <span class='cells' id='cell1'></span>
+            <span class='cells' id='cell2'></span>
+            <span class='cells' id='cell3'></span>
+        </div>
+        <div class='row' id='row2'>
+            <span class='cells' id='cell4'></span>
+            <span class='cells' id='cell5'></span>
+            <span class='cells' id='cell6'></span>
+        </div>
+        <div class='row' id='row3'>
+            <span class='cells' id='cell7'></span>
+            <span class='cells' id='cell8'></span>
+            <span class='cells' id='cell9'></span>
+        </div>
+    </main>
+    
+    <script src="logic.js"></script>
+</body>
+
+</html>
